@@ -1,0 +1,11 @@
+aside.overwrite__index{
+    position: relative !important; 
+}
+
+aside.overwrite__index>.container{
+    width: unset !important;
+}
+
+main>header.overwrite__listview{
+    height: unset !important;
+}

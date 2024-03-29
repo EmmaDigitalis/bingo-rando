@@ -1,0 +1,47 @@
+.flex{
+    display: flex;
+}
+
+.fRow{
+    flex-direction: row;
+}
+
+.fCol{
+    flex-direction: column;
+}
+
+.fJustifyStart{
+    justify-content: flex-start;
+}
+
+.fJustifyCenter{
+    justify-content: center;
+}
+
+.fJustifyEnd{
+    justify-content: flex-end;
+}
+
+.fAlignStart{
+    align-items: flex-start;
+}
+
+.fAlignCenter{
+    align-items: center;
+}
+
+.fAlignEnd{
+    align-items: flex-end;
+}
+
+.fNoShrink{
+    flex-shrink: 0;
+}
+
+.f100{
+    flex: 1;
+}
+
+.fWrap{
+    flex-wrap: wrap;
+}

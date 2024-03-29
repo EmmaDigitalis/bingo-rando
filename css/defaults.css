@@ -1,0 +1,348 @@
+/*-------------------------------------------*/
+/*------------Structure Elements-------------*/
+/*-------------------------------------------*/
+:root{
+    --col-main: rgb(117, 110, 138);
+    --col-light: rgb(152, 143, 179);
+    --col-warning: crimson;
+}
+
+* {
+    font-family: fontHeaders;
+    font-weight: 400;
+    font-size: 18px;
+    letter-spacing: 1px;
+    box-sizing: border-box;
+    scrollbar-color: var(--col-main) rgb(202, 188, 240);
+    scrollbar-width: thin;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: radial-gradient(ellipse, rgb(240, 228, 245) 0%, rgb(196, 174, 200) 80%, rgb(102, 89, 108) 100%);
+    background-attachment: fixed;
+}
+
+header {
+    width: 100%;
+    height: 64px;
+    line-height: 58px;
+    top: 0;
+    background: var(--col-main);
+    color: white;
+    text-align: center;
+    margin: 0;
+    -webkit-box-shadow: 0px 6px 15px -3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 6px 15px -3px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+    position: relative;
+}
+
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: center;
+    background: transparent;
+    border-spacing: 0;
+    text-align: center;
+}
+
+table th {
+    background-color: rgba(0, 0, 0, 0.2);
+    border-bottom: 1px solid var(--col-main);
+    margin-bottom: 8px;
+}
+
+.block {
+    padding: 8px;
+}
+
+hr{
+    height: 1px;
+    width: 100%;
+    background-color: black;
+    margin: 16px 0;
+}
+
+ul, ol, li{
+    margin: 0;
+    padding: 0;
+    list-style-type: unset;
+}
+
+/*-------------------------------------------*/
+/*--------------------Text-------------------*/
+/*-------------------------------------------*/
+h2,
+h3,
+h4 {
+    font-family: fontHeaders;
+    margin: 0;
+    padding: 0;
+    letter-spacing: -1px;
+}
+
+h2 {
+    font-weight: 600;
+    font-size: 36px;
+}
+
+h3 {
+    font-weight: 600;
+    font-size: 28px;
+}
+
+h4 {
+    font-weight: 400;
+    font-size: 21px;
+}
+
+
+
+/*-------------------------------------------*/
+/*------------------Display------------------*/
+/*-------------------------------------------*/
+.hidden {
+    pointer-events: none;
+    opacity: 0 !important;
+}
+
+.show {
+    opacity: 100% !important;
+}
+
+#popup {
+    width: 100%;
+    height: 64px;
+    line-height: 64px;
+    top: calc(50% - 32px);
+    color: white;
+    text-align: center;
+    margin: 0;
+    -webkit-box-shadow: 0px 6px 15px -3px rgba(0, 0, 0, 0.5);
+    box-shadow: 0px 6px 15px -3px rgba(0, 0, 0, 0.5);
+    z-index: 10;
+    position: fixed;
+}
+
+#popup.positive {
+    background-color: rgb(101, 209, 186);
+}
+
+#popup.negative {
+    background-color: rgb(209, 108, 101);
+}
+
+.arrow-left,
+.arrow-right {
+    width: 12px;
+    height: 16px;
+    background-color: gray;
+    mix-blend-mode: color-dodge;
+}
+
+.arrow-left {
+    clip-path: polygon(100% 0, 100% 100%, 0 50%, 100% 0);
+}
+
+.arrow-right {
+    clip-path: polygon(0 0, 0 100%, 100% 50%, 0 0);
+}
+
+.wideboi:not(:first-child):not(:last-child){
+    margin: 0 32px;
+}
+
+.wideboi:first-child{
+    margin-right: 32px;
+}
+
+.wideboi:last-child{
+    margin-left: 32px;
+}
+
+/*-------------------------------------------*/
+/*----------------Input Types----------------*/
+/*-------------------------------------------*/
+
+select {
+    /* A reset of styles, including removing the default dropdown arrow */
+
+    /* Additional resets for further consistency */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    margin: 0;
+    font-family: inherit;
+    font-size: inherit;
+    cursor: inherit;
+    line-height: inherit;
+    position: relative;
+    /* Customization */
+    border-left: 2px solid var(--col-main);
+    padding: 4px 4px 4px 32px;
+    min-width: 192px;
+    z-index: 1;
+    transition: 0.2s ease;
+}
+
+select:disabled{
+    filter: brightness(2) grayscale(0.3) saturate(0.4);
+}
+
+select:hover:not(:disabled) {
+    filter:
+        drop-shadow(0px 0px 1px #32294b) drop-shadow(2px 2px 0px #ded2ff) drop-shadow(-2px 2px 0px #ded2ff) drop-shadow(-2px -2px 0px #ded2ff) drop-shadow(2px -2px 0px #ded2ff);
+    cursor: pointer;
+}
+
+select.dropdown-dark {
+    background-color: #313131;
+    color: #f3f2f7;
+}
+
+select.dropdown-light {
+    background-color: #f3f2f7;
+    color: #313131;
+}
+
+option {
+    padding: 0;
+}
+
+textarea {
+    resize: none;
+}
+
+input,
+textarea{
+    border: 1px solid var(--col-main);
+    padding: 4px 0 4px 8px;
+    outline: 0;
+}
+
+input:focus:not([type=checkbox]),
+textarea:focus{
+    outline: 3px solid rgb(195, 176, 247);;
+}
+
+input,
+textarea,
+select {
+    transition: 0.2s ease;
+    filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.1));
+}
+
+input[type=checkbox] {
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.8);
+    /* IE */
+    -moz-transform: scale(1.8);
+    /* FF */
+    -webkit-transform: scale(1.8);
+    /* Safari and Chrome */
+    -o-transform: scale(1.8);
+    /* Opera */
+    transform: scale(1.8);
+    padding: 10px;
+    position: relative;
+    top: -2px;
+    left: -1px;
+}
+
+input:hover,
+textarea:hover {
+    filter:
+        drop-shadow(0px 0px 1px #32294b) drop-shadow(1px 1px 0px #ded2ff) drop-shadow(-1px 1px 0px #ded2ff) drop-shadow(-1px -1px 0px #ded2ff) drop-shadow(1px -1px 0px #ded2ff);
+}
+
+input[readonly] {
+    cursor: default;
+    box-shadow: none;
+    background: #dbd0e0;
+    outline: none;
+    border: 1px solid var(--col-main);
+    filter: drop-shadow(0px 0px 0px black);
+}
+
+.lightarea input:not([readonly]), .lightarea textarea:not([readonly]){
+    background-color: #313131;
+    color: #f3f2f7;
+}
+
+/*-------------------------------------------*/
+/*-----------------Animations----------------*/
+/*-------------------------------------------*/
+.anim-appear1 {
+    animation: appear1 linear 0.3s 0.2s forwards !important;
+}
+
+.anim-swipe {
+    animation: swipe linear 0.7s forwards !important;
+}
+
+/*-------------------------------------------*/
+/*----------Scrollbars & Resources-----------*/
+/*-------------------------------------------*/
+*::-webkit-scrollbar {
+    width: 16px;
+    height: 16px;
+    background: none;
+}
+
+*::-webkit-scrollbar-track {
+    border-radius: 6px;
+    width: 8px;
+    background: rgba(0, 0, 0, 0);
+}
+
+*::-webkit-scrollbar-thumb {
+    height: 16px;
+    border: 3px solid rgba(0, 0, 0, 0);
+    background-clip: padding-box;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: inset -1px -1px 0px rgba(0, 0, 0, 0.05), inset 1px 1px 0px rgba(0, 0, 0, 0.05);
+}
+
+*::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+*::-webkit-scrollbar-button {
+    height: 0;
+    background-color: none;
+}
+
+*::-webkit-scrollbar-corner {
+    width: 0;
+    height: 0;
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    *::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    *::-webkit-scrollbar-thumb {
+        border: 1px solid rgba(0, 0, 0, 0);
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    #about>#aboutRemainder>.left>#skillSegment {
+        padding: 16px 0px;
+    }
+}
